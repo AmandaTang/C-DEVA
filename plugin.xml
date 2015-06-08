@@ -66,6 +66,12 @@
             id="CDEVA.editor3"
             name="Network View">
       </editor>
+      <editor
+            class="clustere.editors.PredictionView"
+            default="false"
+            id="CDEVA.editor4"
+            name="Prediction View">
+      </editor>
    </extension>
    <extension
          id="product"

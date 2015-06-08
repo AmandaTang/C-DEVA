@@ -28,6 +28,7 @@ public class ShowEditorAction extends Action {
     private final String view1ID = "CDEVA.editor1";
     private final String view2ID = "CDEVA.editor2";
     private final String view3ID = "CDEVA.editor3";
+    private final String PredcitonID = "CDEVA.editor4";
 	
 	public ShowEditorAction(IWorkbenchWindow window){
 		super("&Show Editor",Action.AS_DROP_DOWN_MENU);
@@ -66,6 +67,13 @@ public class ShowEditorAction extends Action {
 						showEditor(view3ID,NetworkViewInput.getInstance());
 					}
 				});
+				MenuItem item4 = new MenuItem(menu,SWT.NONE);
+				item3.setText("&Prediction Editor");
+				item3.addSelectionListener(new SelectionAdapter(){
+					public void widgetSelected(SelectionEvent e) {
+						showEditor(PredcitonID,NetworkViewInput.getInstance());
+					}
+				});
 				return menu;
 			}
 
@@ -94,6 +102,14 @@ public class ShowEditorAction extends Action {
 						showEditor(view3ID,NetworkViewInput.getInstance());
 					}
 				});
+				MenuItem item4 = new MenuItem(menu,SWT.NONE);
+				item4.setText("&Prediction Editor");
+				item4.addSelectionListener(new SelectionAdapter(){
+					public void widgetSelected(SelectionEvent e) {
+						hideViews();
+				    	showEditor(PredcitonID,NetworkViewInput.getInstance());
+					}
+				});
 				return menu;
 			}
 			
@@ -120,4 +136,11 @@ public class ShowEditorAction extends Action {
 		showEditor(view3ID,NetworkViewInput.getInstance());
 	}
 
+	public void hideViews() {
+		IWorkbenchPage workbenchPage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
+	    
+		workbenchPage.hideView(workbenchPage.findView("CDEVA.view1"));
+	    workbenchPage.hideView(workbenchPage.findView("CDEVA.view3"));
+	    workbenchPage.hideView(workbenchPage.findView("CDEVA.view4"));
+	}
 }
