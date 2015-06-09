@@ -67,7 +67,7 @@
             name="Network View">
       </editor>
       <editor
-            class="clustere.editors.PredictionView"
+            class="clustere.editors.PredictionEditor"
             default="false"
             id="CDEVA.editor4"
             name="Prediction View">

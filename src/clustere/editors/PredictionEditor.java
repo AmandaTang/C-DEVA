@@ -7,7 +7,7 @@ import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.EditorPart;
 
-public class PredictionView extends EditorPart {
+public class PredictionEditor extends EditorPart {
 
 	@Override
 	public void doSave(IProgressMonitor monitor) {
