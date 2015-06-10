@@ -45,6 +45,12 @@
             name="Using Algorithms"
             restorable="true">
       </view>
+      <view
+            class="clustere.views.PreditionView"
+            id="CDEVA.view5"
+            name="Gene Table"
+            restorable="true">
+      </view>
    </extension>
    <extension
          point="org.eclipse.ui.editors">

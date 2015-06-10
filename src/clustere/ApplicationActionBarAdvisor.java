@@ -105,6 +105,14 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     	MenuManager evaluationMenu = new MenuManager("&Evaluation","evaluation");
     	evaluationMenu.add(showClusterResultAction);
     	evaluationMenu.add(new Separator());
+    /**
+     * @author TangYu
+     * @date: 2015年6月10日 下午3:30:40
+     */
+    /*************************Prediciton****************************/ 
+    	MenuManager predicitonMenu = new MenuManager("&Prediciton","prediciton");
+    	predicitonMenu.add(new Separator());   
+    	
      /*************************Evaluation****************************/
     	MenuManager toolMenu = new MenuManager("&Tool","tool");
     	toolMenu.add(paramaterSetAction);
@@ -114,13 +122,14 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     	MenuManager helpMenu = new MenuManager("&Help","help");
     	helpMenu.add(aboutAction);
     	helpMenu.add(helpAction);
-    	fillPluginMenu(runMenu, evaluationMenu);
+    	fillPluginMenu(runMenu, evaluationMenu, predicitonMenu);
     	
     	menuBar.add(fileMenu);
     	menuBar.add(viewMenu);
     	menuBar.add(pluginMenu);
     	menuBar.add(runMenu);
     	menuBar.add(evaluationMenu);
+    	menuBar.add(predicitonMenu);
     	menuBar.add(toolMenu);
     	menuBar.add(helpMenu);
     }
@@ -158,9 +167,9 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
     	statusLine.add(statusItem);
     }
     
-    protected void fillPluginMenu(MenuManager runMenu,MenuManager evaluationMenu){
+    protected void fillPluginMenu(MenuManager runMenu,MenuManager evaluationMenu, MenuManager predicitonMenu){
     	for(int i=0;i<LoaderServer.pluginList.size();i++){
-    		LoadManage.getInstance().addItem(runMenu, evaluationMenu, LoaderServer.pluginList.get(i));
+    		LoadManage.getInstance().addItem(runMenu, evaluationMenu, predicitonMenu, LoaderServer.pluginList.get(i));
     	}
     }
 }

@@ -28,6 +28,7 @@ import org.eclipse.swt.widgets.TreeItem;
 
 import clustere.pluginAction.PluginAlgorithmAction;
 import clustere.pluginAction.PluginEvaluationAction;
+import clustere.pluginAction.PluginPredictionAction;
 
 import com.wuxuehong.interfaces.NewAlgorithm;
 
@@ -45,12 +46,15 @@ public class LoadManage {
        return loadmanage;
 	}
 	
-	public void addItem(MenuManager runMenu,MenuManager evaluationMenu,NewAlgorithm section){
+	public void addItem(MenuManager runMenu,MenuManager evaluationMenu, MenuManager predicitonMenu, NewAlgorithm section){
 		int style = section.getStyle();
 		if(style == NewAlgorithm.Algorithm){
 		    runMenu.add(new PluginAlgorithmAction(section));
 		}else if(style == NewAlgorithm.Evaluation){
 			evaluationMenu.add(new PluginEvaluationAction(section));
+		}
+		else if(style == NewAlgorithm.PREDICTION){
+			predicitonMenu.add(new PluginPredictionAction(section));
 		}
 	}
 	

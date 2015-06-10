@@ -16,6 +16,7 @@ import com.wuxuehong.bean.Node;
 public interface NewAlgorithm {
 	public static final int Algorithm = 1;
 	public static final int Evaluation = 2;
+	public static final int PREDICTION = 3;
 	/**
 	 * Disease gene prediction plug-in
 	 */
