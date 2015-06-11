@@ -71,6 +71,7 @@ public class ShowEditorAction extends Action {
 				item3.setText("&Prediction Editor");
 				item3.addSelectionListener(new SelectionAdapter(){
 					public void widgetSelected(SelectionEvent e) {
+						hideViews();
 						showEditor(PredcitonID,NetworkViewInput.getInstance());
 					}
 				});
@@ -136,11 +137,20 @@ public class ShowEditorAction extends Action {
 		showEditor(view3ID,NetworkViewInput.getInstance());
 	}
 
+	/**
+	 * hide the cluster views 
+	 */
 	public void hideViews() {
 		IWorkbenchPage workbenchPage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
 	    
-		workbenchPage.hideView(workbenchPage.findView("CDEVA.view1"));
-	    workbenchPage.hideView(workbenchPage.findView("CDEVA.view3"));
-	    workbenchPage.hideView(workbenchPage.findView("CDEVA.view4"));
+		try {
+			workbenchPage.showView("CDEVA.view5");
+		} catch (PartInitException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		workbenchPage.hideView(workbenchPage.findView("CDEVA.view1"));
+//	    workbenchPage.hideView(workbenchPage.findView("CDEVA.view3"));
+//	    workbenchPage.hideView(workbenchPage.findView("CDEVA.view4"));
 	}
 }

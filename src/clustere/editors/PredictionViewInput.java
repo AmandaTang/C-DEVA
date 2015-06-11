@@ -7,7 +7,7 @@ import org.eclipse.ui.IPersistableElement;
 public class PredictionViewInput implements IEditorInput {
     public static PredictionViewInput predictionviewinput = null;
     
-    public PredictionViewInput getInstance() {
+    public static PredictionViewInput getInstance() {
     	if (predictionviewinput == null) {
     		predictionviewinput = new PredictionViewInput();
     	}

@@ -46,7 +46,7 @@
             restorable="true">
       </view>
       <view
-            class="clustere.views.PreditionView"
+            class="clustere.views.PredictionView"
             id="CDEVA.view5"
             name="Gene Table"
             restorable="true">
